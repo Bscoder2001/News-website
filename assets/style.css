@@ -150,18 +150,18 @@ main {
   margin-block: 12px;
 }
 .secondSection {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.4s;
-    position: fixed;
-    top: 65px;
-    padding-bottom: 20px;
-    left: 0;
-    right: 0;
-    background-color: whitesmoke;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s;
+  position: fixed;
+  top: 65px;
+  padding-bottom: 20px;
+  left: 0;
+  right: 0;
+  background-color: whitesmoke;
 }
 
 .secondSection ul {
@@ -173,16 +173,42 @@ main {
   align-items: center;
   margin: 30px 0px;
 }
-
+.searchIn {
+  width: 70%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: max-height 0.3s ease-in-out;
+}
 /* Responsive section */
 @media only screen and (max-width: 743px) {
-    .navLink1, .searchBar1 {
-        display: none;
-    }
+  .searchIn {
+    display: flex;
+    flex-direction: column;
+    max-height: 0px;
+    overflow: hidden;
+    margin: 50px 0px;
+    width: 100%;
+  }
+  .company-logo {
+    position: absolute;
+    top: 0px;
+  }
+  .nav-links {
+    margin: 5px 0px;
+  }
+  .searchIn div ul{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
   #bar {
     display: block;
     border: 1px solid black;
     padding: 6px;
     border-radius: 7px;
+    position: absolute;
+    top: 28px;
+    right: 10px;
   }
 }

@@ -39,53 +39,53 @@ function fillDataInCard(cardClone, article) {
     })
 
     newsSource.innerHTML = `${article.source.name} : ${date}`
+
+cardClone.firstElementChild.addEventListener('click', ()=>{
+        window.open(article.url, "_blank")
+})
 }
 
 
-let curerntSelectedNav = null;
+let currentSelectedNav = null;
 
+//onclick method on nav buttons
 function onNavItemClick (id) {
     fetchNews(id);
     const navItem = document.getElementById(id);
-    curerntSelectedNav?.classList.remove('active');
-    curerntSelectedNav = navItem;
-    curerntSelectedNav.classList.add('active')
+    currentSelectedNav?.classList.remove('active');
+    currentSelectedNav = navItem;
+    currentSelectedNav.classList.add('active')
 }
 
 const searchText = document.querySelector('#search-text');
-const searchButton = document.querySelector('#search-button');
+const searchButton = document.querySelector('.search-button');
 
     searchButton.addEventListener('click', ()=>{
         let query = searchText.value;
         if(!query) return;
         fetchNews(query);
     
-        curerntSelectedNav?.classList.remove('active');
-        curerntSelectedNav = null;
+        currentSelectedNav?.classList.remove('active');
+        currentSelectedNav = null;
     
     })
 
 
 const icon = document.querySelector(".icon");
-const secondSection = document.querySelector(".secondSection");
-
+let searchIn = document.querySelector('.searchIn')
 icon.addEventListener("click", () => {
-  if (secondSection.style.maxHeight == 0) {
-    secondSection.style.maxHeight = secondSection.scrollHeight + "px";
-  } else {
-    secondSection.style.maxHeight = null;
-  }
-});
 
-const searchText2 = document.querySelector('#search-text');
-const searchButton2 = document.querySelector('#search-button');
-
-searchButton2.addEventListener('click', ()=>{
-    let query = searchText2.value;
-    if(!query) return;
-    fetchNews(query);
-
-    curerntSelectedNav?.classList.remove('active');
-    curerntSelectedNav = null;
-
+        if(searchIn.style.maxHeight == 0) {
+            searchIn.style.maxHeight = searchIn.scrollHeight + 'px';
+        } else {
+            searchIn.style.maxHeight = null;
+        } 
 })
+// icon.addEventListener("click", () => {
+//   if (secondSection.style.maxHeight == 0) {
+//     secondSection.style.maxHeight = secondSection.scrollHeight + "px";
+//   } else {
+//     secondSection.style.maxHeight = null;
+//   }
+// });
+
